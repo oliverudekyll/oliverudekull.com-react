@@ -14,7 +14,7 @@ function NavBar() {
   return (
     <div className="nav-bar">
       <Contact />
-      <p>Contact for full portfolio</p>
+      <p className="nav-bar__body">Contact for full portfolio</p>
     </div>
   );
 }

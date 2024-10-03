@@ -11,6 +11,18 @@ export function StateIcon({ isOpen }) {
   );
 }
 
+function ProjectContents({ title, order, isOpen }) {
+  return (
+    <>
+      <div className="project__order">
+        <StateIcon isOpen={isOpen} />
+        {order.join("")}
+      </div>
+      <div className="project__title">{title}</div>
+    </>
+  );
+}
+
 function Project({ title, url, i, docX, docY }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,9 +52,7 @@ function Project({ title, url, i, docX, docY }) {
           className="feed__project"
           onClick={handleClick}
         >
-          <StateIcon isOpen={isOpen} />
-          <div className="project__order">{order.join("")}</div>
-          <div className="project__title">{title}</div>
+          <ProjectContents title={title} order={order} isOpen={isOpen} />
         </a>
       ) : (
         <article
@@ -52,9 +62,7 @@ function Project({ title, url, i, docX, docY }) {
           className="feed__project"
           onClick={handleClick}
         >
-          <StateIcon isOpen={isOpen} />
-          <div className="project__order">{order.join("")}</div>
-          <div className="project__title">{title}</div>
+          <ProjectContents title={title} order={order} isOpen={isOpen} />
         </article>
       )}
     </>

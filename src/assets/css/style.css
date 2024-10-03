@@ -54,7 +54,7 @@ a {
 }
 
 .nav-bar__link,
-p {
+.nav-bar__body {
   color: var(--colour-body);
   font-family: var(--helvetica-bold);
   font-size: 1.125rem;
@@ -112,6 +112,7 @@ p {
 
   color: var(--colour-body);
   font-family: var(--helvetica-ext);
+  text-decoration: none !important;
 }
 
 .project__title {
@@ -131,10 +132,12 @@ p {
 
 .project__state-icon {
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 0.6em;
+  height: 0.6em;
 
-  transform: translate(-0.8rem, -0.45rem);
+  display: inline;
+
+  transform: translate(-37%, -21%);
   transition: transform var(--transition-hover);
 }
 
@@ -161,7 +164,7 @@ p {
 }
 
 .feed__project:hover .project__state-icon {
-  transform: translate(-0.8rem, -0.45rem) rotate(180deg);
+  transform: translate(-37%, -21%) rotate(180deg);
 }
 
 .feed__project:hover .state-icon__stem {
