@@ -16,10 +16,10 @@ function Feed() {
       url: "https://socalledneutral.oliverudekull.com/",
     },
     {
-      title: "If This Be Not I",
+      title: "If This Be&nbsp;Not&nbsp;I",
     },
     {
-      title: "Woman Sitting at the Machine (Thinking)",
+      title: "Woman Sitting at the&nbsp;Machine (Thinking)",
     },
     {
       title: "Inklingroom",
@@ -29,10 +29,10 @@ function Feed() {
       url: "http://www.erikmerisalu.com/",
     },
     {
-      title: "Chants for Recognition",
+      title: "Chants for&nbsp;Recognition",
     },
     {
-      title: "Thru the Motions",
+      title: "Thru the&nbsp;Motions",
     },
     {
       title: "Elementary",

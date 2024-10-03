@@ -18,7 +18,10 @@ function ProjectContents({ title, order, isOpen }) {
         <StateIcon isOpen={isOpen} />
         {order.join("")}
       </div>
-      <div className="project__title">{title}</div>
+      <div
+        className="project__title"
+        dangerouslySetInnerHTML={{ __html: title }}
+      ></div>
     </>
   );
 }
