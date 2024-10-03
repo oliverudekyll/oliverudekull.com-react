@@ -30,7 +30,7 @@ function Project({ title, url, i, docX, docY }) {
   }
 
   return (
-    <div>
+    <>
       {url ? (
         <a
           style={{
@@ -57,7 +57,7 @@ function Project({ title, url, i, docX, docY }) {
           <div className="project__title">{title}</div>
         </article>
       )}
-    </div>
+    </>
   );
 }
 export default Project;

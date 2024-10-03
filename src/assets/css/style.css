@@ -88,10 +88,13 @@ p {
 }
 
 .feed__project {
+  margin-bottom: -0.17em;
+
   color: transparent;
   background: url(../images/texture_90-ccw.jpg);
   background-clip: text;
   background-size: 100%;
+
   font-size: 4rem;
   font-style: normal;
   font-weight: 400;
@@ -113,6 +116,7 @@ p {
 
 .project__title {
   display: inline;
+  margin: 0rem 0.25rem 0rem 0.25rem;
 
   font-family: var(--helvetica-black);
 
@@ -130,14 +134,14 @@ p {
   width: 2rem;
   height: 2rem;
 
-  transform: translate(-0.75rem, -0.75rem);
+  transform: translate(-0.8rem, -0.45rem);
   transition: transform var(--transition-hover);
 }
 
 .state-icon__stem {
   position: absolute;
-  width: 2rem;
-  height: 0.25rem;
+  width: 0.6em;
+  height: 0.075em;
   top: 50%;
   left: 50%;
 
@@ -148,8 +152,8 @@ p {
 }
 
 .vertical {
-  width: 0.25rem;
-  height: 2rem;
+  width: 0.075em;
+  height: 0.6em;
 }
 
 .vertical--open {
@@ -157,17 +161,17 @@ p {
 }
 
 .feed__project:hover .project__state-icon {
-  transform: translate(-0.75rem, -0.75rem) rotate(180deg);
+  transform: translate(-0.8rem, -0.45rem) rotate(180deg);
 }
 
 .feed__project:hover .state-icon__stem {
   background-color: #668899;
-  height: 0.5rem;
+  height: 0.15em;
 }
 
 .feed__project:hover .vertical {
-  width: 0.5rem;
-  height: 2rem;
+  width: 0.15em;
+  height: 0.6em;
 }
 
 @media screen and (max-width: 1700px) {
@@ -177,7 +181,6 @@ p {
 
   .feed__project {
     font-size: 3.5rem;
-    line-height: 3rem;
   }
 }
 
@@ -188,6 +191,17 @@ p {
 
   .feed__project {
     font-size: 3rem;
-    line-height: 2.5714285713rem;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .feed {
+    max-width: 800px;
+  }
+
+  .feed__project {
+    font-size: 2.5rem;
+    width: fit-content;
+    white-space: pre-wrap;
   }
 }
