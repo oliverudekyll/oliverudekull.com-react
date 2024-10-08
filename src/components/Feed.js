@@ -1,4 +1,7 @@
 import { useEffect, useRef } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
+
+import "animate.css/animate.compat.css";
 
 import Project from "./Project.js";
 
@@ -87,21 +90,23 @@ function Feed({ mouseX, mouseY }) {
   ];
 
   return (
-    <main className="feed">
-      {projects
-        .slice()
-        .reverse()
-        .map((project, i) => (
-          <Project
-            key={projects.id}
-            i={i}
-            title={project.title}
-            mouseX={mouseX}
-            mouseY={mouseY}
-            {...(project.hasOwnProperty("url") ? { url: project.url } : {})}
-          />
-        ))}
-    </main>
+    <ScrollAnimation animateIn="fadeInUp" duration=".6">
+      <main className="feed">
+        {projects
+          .slice()
+          .reverse()
+          .map((project, i) => (
+            <Project
+              key={projects.id}
+              i={i}
+              title={project.title}
+              mouseX={mouseX}
+              mouseY={mouseY}
+              {...(project.hasOwnProperty("url") ? { url: project.url } : {})}
+            />
+          ))}
+      </main>
+    </ScrollAnimation>
   );
 }
 
