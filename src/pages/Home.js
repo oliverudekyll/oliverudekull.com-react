@@ -1,18 +1,25 @@
 import { useState, useEffect, useRef } from "react";
+import { useMouse } from "react-use";
 
 import "../assets/css/_reset.css";
 import "../assets/css/fonts.css";
 import "../assets/css/style.css";
 
-import NavBar from "../components/NavBar.js";
+import Footer from "../components/Footer.js";
 import Feed from "../components/Feed.js";
-import Drafts from "../pages/Drafts.js";
 
 function Home() {
+  const ref = useRef(null);
+  const { docX, docY } = useMouse(ref);
+
+  const ratio = 100;
+  const mouseX = 1 - (docX / window.innerWidth) * ratio;
+  const mouseY = 1 - (docY / window.innerHeight) * ratio - 50;
+
   return (
-    <div className="home">
-      <NavBar />
-      <Feed />
+    <div ref={ref} className="home">
+      <Feed mouseX={mouseX} mouseY={mouseY} />
+      <Footer mouseX={mouseX} mouseY={mouseY} />
     </div>
   );
 }

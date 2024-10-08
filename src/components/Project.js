@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export function StateIcon({ isOpen }) {
   return (
@@ -16,22 +16,18 @@ function ProjectContents({ title, order, isOpen }) {
     <>
       <div className="project__order">
         <StateIcon isOpen={isOpen} />
-        {order.join("")}
+        {order}
       </div>
-      <div
+      <h2
         className="project__title"
         dangerouslySetInnerHTML={{ __html: title }}
-      ></div>
+      ></h2>
     </>
   );
 }
 
-function Project({ title, url, i, docX, docY }) {
+function Project({ title, url, i, mouseX, mouseY }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  const ratio = 100;
-  const mouseX = 1 - (docX / window.innerWidth) * ratio;
-  const mouseY = 1 - (docY / window.innerHeight) * ratio - 50;
 
   function handleClick() {
     if (!url) {
@@ -39,13 +35,13 @@ function Project({ title, url, i, docX, docY }) {
     }
   }
 
-  const order = [i + 1];
-  while (order.length < 3) {
-    order.unshift(0);
-  }
+  const order = String(i + 1).padStart(3, "0");
 
   return (
     <>
+      {useEffect(() => {
+        console.log("mouseX:", mouseX, "mouseY:", mouseY);
+      }, [mouseX, mouseY])}
       {url ? (
         <a
           style={{

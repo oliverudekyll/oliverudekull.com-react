@@ -23,7 +23,7 @@ body {
   background-color: rgba(230, 230, 25, 0.35);
 }
 
-.nav-bar {
+.footer {
   position: fixed;
   width: 100vw;
   bottom: 0;
@@ -37,7 +37,7 @@ body {
   z-index: 999;
 }
 
-.nav-bar__contact {
+.footer__nav-bar {
   padding: 2rem;
   border-radius: 1rem;
 
@@ -46,9 +46,10 @@ body {
 
   background-image: url(../images/texture.jpg);
   background-position: center;
-  background-size: 100%;
+  background-size: 150%;
+  opacity: 0.9;
 
-  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.45) inset;
+  box-shadow: 0px 0px 40px 0px rgba(230, 230, 230, 0.5) inset;
 }
 
 a {
@@ -57,7 +58,7 @@ a {
 }
 
 .nav-bar__link,
-.nav-bar__body {
+.footer__body {
   color: var(--colour-body);
   font-family: var(--helvetica-bold);
   font-size: 1.125rem;
@@ -69,18 +70,38 @@ a {
   transition: color var(--transition-hover);
 }
 
+.footer__body {
+  color: hsl(0, 0%, 85%);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  33.3% {
+    transform: rotate(-35deg);
+  }
+  66.6% {
+    transform: rotate(35deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .link__bracket {
   color: var(--colour-body) !important;
 }
 @media (hover: hover) {
   .nav-bar__link:hover {
     color: var(--colour-hover);
+    animation: shake ease-in-out infinite;
   }
 }
 
 .feed {
   width: 100vw;
-  max-width: 1900px;
+  max-width: 2000px;
   margin: auto;
   padding: 2rem;
 
@@ -219,6 +240,7 @@ a {
   }
   .feed {
     /* max-width: 1000px; */
+    flex-flow: column nowrap;
     row-gap: calc((2.45rem * 0.9) / 2);
   }
 
