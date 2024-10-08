@@ -25,7 +25,7 @@ body {
 
 .footer {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   bottom: 0;
   left: 0;
   padding: 2rem;
@@ -100,7 +100,7 @@ a {
 }
 
 .feed {
-  width: 100vw;
+  width: 100%;
   max-width: 2000px;
   margin: auto;
   padding: 2rem;
@@ -216,14 +216,16 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-  .nav-bar {
+  .footer {
     position: relative;
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
+    padding: 1rem;
+    padding-top: 0;
 
     justify-content: center;
   }
 
-  .nav-bar__contact {
+  .footer__nav-bar {
     padding: 1rem;
 
     /*     display: grid;
@@ -231,11 +233,11 @@ a {
     grid-template-rows: repeat(2, 1fr); */
   }
 
-  .nav-bar__contact * {
+  .footer__nav-bar {
     text-align: center;
   }
 
-  .nav-bar__body {
+  .footer__body {
     display: none;
   }
   .feed {

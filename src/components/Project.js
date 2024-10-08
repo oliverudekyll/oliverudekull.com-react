@@ -39,9 +39,7 @@ function Project({ title, url, i, mouseX, mouseY }) {
 
   return (
     <>
-      {useEffect(() => {
-        console.log("mouseX:", mouseX, "mouseY:", mouseY);
-      }, [mouseX, mouseY])}
+      {useEffect(() => {}, [mouseX, mouseY])}
       {url ? (
         <a
           style={{
