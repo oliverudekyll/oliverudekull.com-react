@@ -90,23 +90,21 @@ function Feed({ mouseX, mouseY }) {
   ];
 
   return (
-    <ScrollAnimation animateIn="fadeInUp" duration=".6">
-      <main className="feed">
-        {projects
-          .slice()
-          .reverse()
-          .map((project, i) => (
-            <Project
-              key={projects.id}
-              i={i}
-              title={project.title}
-              mouseX={mouseX}
-              mouseY={mouseY}
-              {...(project.hasOwnProperty("url") ? { url: project.url } : {})}
-            />
-          ))}
-      </main>
-    </ScrollAnimation>
+    <main className="feed">
+      {projects
+        .slice()
+        .reverse()
+        .map((project, i) => (
+          <Project
+            key={projects.id}
+            i={i}
+            title={project.title}
+            mouseX={mouseX}
+            mouseY={mouseY}
+            {...(project.hasOwnProperty("url") ? { url: project.url } : {})}
+          />
+        ))}
+    </main>
   );
 }
 

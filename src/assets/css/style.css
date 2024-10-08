@@ -9,6 +9,7 @@
 
   --transition-hover: 150ms ease-in-out;
   --transition-250: 250ms ease-in-out;
+  --transition-fade-in: 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 body {
@@ -99,6 +100,26 @@ a {
   }
 }
 
+@keyframes blurIn {
+  from {
+    filter: blur(5px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .feed {
   width: 100%;
   max-width: 2000px;
@@ -110,6 +131,8 @@ a {
   justify-content: center;
   text-align: center;
   column-gap: 1.5rem;
+
+  animation: fadeInDown var(--transition-fade-in), blurIn 800ms ease-in-out;
 }
 
 .feed__project {
