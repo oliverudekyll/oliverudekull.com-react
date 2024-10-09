@@ -23,7 +23,7 @@ function Home() {
     <div ref={ref} className="home">
       <Feed mouseX={mouseX} mouseY={mouseY} />
       <Footer mouseX={mouseX} mouseY={mouseY} />
-      <Watermark mouseX={mouseX / 4} mouseY={mouseY / 4} />
+      {/* <Watermark mouseX={mouseX / 4} mouseY={mouseY / 4} /> */}
     </div>
   );
 }
