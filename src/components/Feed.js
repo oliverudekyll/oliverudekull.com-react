@@ -1,11 +1,21 @@
 import { useEffect, useRef } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
+import {
+  motion,
+  cubicBezier,
+  easeInOut,
+  backInOut,
+  circInOut,
+  anticipate,
+  linear,
+  steps,
+} from "framer-motion";
 
 import "animate.css/animate.compat.css";
 
 import Project from "./Project.js";
 
-function Feed({ mouseX, mouseY }) {
+function Feed({ mouseX, mouseY, initial, animate, transition }) {
   const projects = [
     {
       title: "Elementary",
@@ -90,13 +100,18 @@ function Feed({ mouseX, mouseY }) {
   ];
 
   return (
-    <main className="feed">
+    <motion.main
+      className="feed"
+      initial={initial}
+      animate={animate}
+      transition={transition}
+    >
       {projects
         .slice()
         .reverse()
         .map((project, i) => (
           <Project
-            key={projects.id}
+            key={project.id}
             i={i}
             title={project.title}
             mouseX={mouseX}
@@ -104,7 +119,7 @@ function Feed({ mouseX, mouseY }) {
             {...(project.hasOwnProperty("url") ? { url: project.url } : {})}
           />
         ))}
-    </main>
+    </motion.main>
   );
 }
 

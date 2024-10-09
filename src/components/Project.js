@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { motion, animate, stagger } from "framer-motion";
 
 export function StateIcon({ isOpen }) {
   return (
@@ -26,7 +27,13 @@ function ProjectContents({ title, order, isOpen }) {
   );
 }
 
-function Project({ title, url, i, mouseX, mouseY }) {
+const initialValue = {
+  opacity: 0,
+  y: "-50%",
+  filter: "blur(0px)",
+};
+
+function Project({ title, url, i, mouseX, mouseY, variants }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleClick() {
@@ -37,10 +44,36 @@ function Project({ title, url, i, mouseX, mouseY }) {
 
   const order = String(i + 1).padStart(3, "0");
 
+  useEffect(() => {
+    const staggerDelay = stagger(0.06);
+    const translateAmount = "0%";
+    setTimeout(() => {
+      animate(
+        "article",
+        { opacity: 1, y: translateAmount, filter: "blur(0px)" },
+        { delay: staggerDelay }
+      );
+      animate(
+        "a",
+        { opacity: 1, y: translateAmount, filter: "blur(0px)" },
+        { delay: staggerDelay }
+      );
+    }, 100);
+    console.log("jou");
+  }, []);
+
   return (
     <>
       {url ? (
-        <a
+        <motion.a
+          drag
+          dragConstraints={{
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+          initial={initialValue}
           style={{
             backgroundPosition: `${mouseX}px ${mouseY}px`,
           }}
@@ -49,9 +82,17 @@ function Project({ title, url, i, mouseX, mouseY }) {
           onClick={handleClick}
         >
           <ProjectContents title={title} order={order} isOpen={isOpen} />
-        </a>
+        </motion.a>
       ) : (
-        <article
+        <motion.article
+          drag
+          dragConstraints={{
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+          initial={initialValue}
           style={{
             backgroundPosition: `${mouseX}px ${mouseY}px`,
           }}
@@ -59,7 +100,7 @@ function Project({ title, url, i, mouseX, mouseY }) {
           onClick={handleClick}
         >
           <ProjectContents title={title} order={order} isOpen={isOpen} />
-        </article>
+        </motion.article>
       )}
     </>
   );

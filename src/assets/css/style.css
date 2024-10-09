@@ -118,9 +118,10 @@ body {
   opacity: 0.9;
 
   transform-origin: bottom left;
-  animation: fadeInSlideL var(--transition-fade-in), blurIn 800ms ease-in-out;
-
+  /*   animation: fadeInSlideL var(--transition-fade-in), blurIn 800ms ease-in-out;
+ */
   box-shadow: 0px 0px 40px 0px rgba(230, 230, 230, 0.5) inset;
+  cursor: move;
 }
 
 a {
@@ -144,7 +145,8 @@ a {
 .footer__body {
   color: hsl(0, 0%, 85%);
 
-  animation: fadeInSlideR var(--transition-fade-in), blurIn 800ms ease-in-out;
+  /*   animation: fadeInSlideR var(--transition-fade-in), blurIn 800ms ease-in-out;
+ */
 }
 
 @keyframes shake {
@@ -212,8 +214,8 @@ a {
   line-height: 0.9;
   letter-spacing: -0.21rem;
 
-  animation: fadeInDown var(--transition-fade-in),
-    blurLineHeightIn 800ms ease-in-out;
+  /*   animation: fadeInDown var(--transition-fade-in),
+    blurLineHeightIn 800ms ease-in-out; */
 }
 
 .feed__project {
