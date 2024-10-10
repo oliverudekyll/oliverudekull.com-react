@@ -27,13 +27,13 @@ body {
 
 @keyframes blurBreathe {
   from {
-    filter: blur(1px);
+    filter: blur(0px) brightness(0.97);
   }
   50% {
-    filter: blur(2px);
+    filter: blur(1px) brightness(0.97);
   }
   to {
-    filter: blur(1px);
+    filter: blur(0px) brightness(0.97);
   }
 }
 
@@ -45,13 +45,13 @@ body {
   left: 0;
 
   background: url("../images/watermark-2.png");
-  background-size: 35%;
+  background-size: 25%;
   background-repeat: repeat;
 
   animation: blurBreathe 5s ease-in-out infinite;
 
   z-index: 999;
-  opacity: 0.75;
+
   pointer-events: none;
   mix-blend-mode: normal;
 }
@@ -98,7 +98,7 @@ body {
 
 @keyframes blurIn {
   from {
-    filter: blur(5px);
+    filter: blur(1px);
   }
   to {
     filter: blur(0px);
@@ -120,6 +120,7 @@ body {
   transform-origin: bottom left;
   /*   animation: fadeInSlideL var(--transition-fade-in), blurIn 800ms ease-in-out;
  */
+
   box-shadow: 0px 0px 40px 0px rgba(230, 230, 230, 0.5) inset;
   cursor: move;
 }

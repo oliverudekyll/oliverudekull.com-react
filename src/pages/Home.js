@@ -55,7 +55,7 @@ function Home() {
         animate={{ opacity: 1, y: "0%", filter: "blur(0px)" }}
         transition={transition}
       />
-      {/* <Watermark mouseX={mouseX / 4} mouseY={mouseY / 4} /> */}
+      <Watermark mouseX={mouseX / 3} mouseY={mouseY / 3} />
     </div>
   );
 }
