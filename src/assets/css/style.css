@@ -37,6 +37,29 @@ body {
   }
 }
 
+@keyframes opacityBreathe {
+  from {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes invertIn {
+  from {
+    filter: blur(20px) invert(0.05);
+    /* background-size: 10.5%; */
+  }
+  to {
+    filter: blur(0px) invert(0);
+    /* background-size: 10%; */
+  }
+}
+
 .watermark {
   position: fixed;
   min-width: 100%;
@@ -44,15 +67,30 @@ body {
   top: 0;
   left: 0;
 
-  background: url("../images/watermark-2-singleUnit.svg");
+  background: url("../images/watermark-2-singleUnit-97.svg");
   background-size: 10%;
   background-repeat: repeat;
+  background-position: center;
 
   /* filter: invert(1); */
   /* animation: blurBreathe 5s ease-in-out infinite; */
+  animation: invertIn 900ms ease-in-out, opacityBreathe 10s ease-in-out infinite;
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  mask-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* Optional for better visibility */
+  -webkit-mask-size: cover;
+  mask-size: cover;
 
   z-index: 999;
-
   pointer-events: none;
   opacity: 1;
 }
@@ -323,6 +361,10 @@ a {
 }
 
 @media screen and (max-width: 1450px) {
+  .watermark {
+    background-size: 15%;
+  }
+
   .feed {
     max-width: 1300px;
   }
@@ -334,6 +376,10 @@ a {
 }
 
 @media screen and (max-width: 900px) {
+  .watermark {
+    background-size: 20%;
+  }
+
   .footer {
     position: relative;
     /* padding-bottom: 0; */
