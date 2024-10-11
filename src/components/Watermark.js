@@ -9,7 +9,7 @@ function Watermark({ mouseX, mouseY, docX, docY }) {
     <span
       style={{
         backgroundPosition: `${mouseX}px ${mouseY}px`,
-        filter: `blur(${y}px) contrast(${x})`,
+        /* filter: `blur(${y}px) contrast(${x})`, */
       }}
       className="watermark"
     ></span>

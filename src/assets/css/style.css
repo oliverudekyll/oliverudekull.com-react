@@ -44,17 +44,17 @@ body {
   top: 0;
   left: 0;
 
-  background: url("../images/watermark-2-whitebg\,png.png");
-  background-size: 25%;
+  background: url("../images/watermark-2-singleUnit.svg");
+  background-size: 10%;
   background-repeat: repeat;
 
+  /* filter: invert(1); */
   /* animation: blurBreathe 5s ease-in-out infinite; */
 
   z-index: 999;
 
   pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: multiply;
+  opacity: 1;
 }
 
 .footer {
@@ -218,6 +218,7 @@ a {
 
   /*   animation: fadeInDown var(--transition-fade-in),
     blurLineHeightIn 800ms ease-in-out; */
+  overflow: hidden;
 }
 
 .feed__project {
@@ -229,7 +230,7 @@ a {
   align-self: center;
   white-space: nowrap;
 
-  cursor: pointer;
+  cursor: move;
 }
 
 .project__order {
