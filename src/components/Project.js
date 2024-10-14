@@ -33,7 +33,7 @@ const initialValue = {
   filter: "blur(0px)",
 };
 
-function Project({ title, url, i, mouseX, mouseY, variants }) {
+function Project({ title, url, i, id, mouseX, mouseY, variants }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleClick() {
@@ -79,6 +79,7 @@ function Project({ title, url, i, mouseX, mouseY, variants }) {
           }}
           href={url}
           className="feed__project"
+          id={id}
           onClick={handleClick}
         >
           <ProjectContents title={title} order={order} isOpen={isOpen} />
@@ -97,6 +98,7 @@ function Project({ title, url, i, mouseX, mouseY, variants }) {
             backgroundPosition: `${mouseX}px ${mouseY}px`,
           }}
           className="feed__project"
+          id={id}
           onClick={handleClick}
         >
           <ProjectContents title={title} order={order} isOpen={isOpen} />
