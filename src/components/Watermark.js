@@ -5,7 +5,7 @@ function Watermark({ mouseX, mouseY, docX, docY }) {
   const height = window.innerHeight;
   const x = (docX / width) * 10 + 1;
   const y = (docY / height) * 1;
-  console.log(x, y);
+  console.log(docX, docY);
 
   const svgInitial = [
     [541.403, 2.29428],
@@ -47,6 +47,7 @@ function Watermark({ mouseX, mouseY, docX, docY }) {
     <span
       style={{
         backgroundPosition: `${mouseX}px ${mouseY}px`,
+        maskPosition: `${docX - width / 2}px ${docY - height / 1.6}px`,
       }}
       className="watermark"
     >

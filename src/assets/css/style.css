@@ -82,17 +82,17 @@ body {
   );
   mask-image: radial-gradient(
     circle,
-    rgba(255, 255, 255, 1) 65%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 1) 50%
   );
 
-  /* Optional for better visibility */
   -webkit-mask-size: cover;
   mask-size: cover;
 
   z-index: 999;
   pointer-events: none;
   opacity: 1;
+  /* mix-blend-mode: difference; */
 }
 
 .footer {
