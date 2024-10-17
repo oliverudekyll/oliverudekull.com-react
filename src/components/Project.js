@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, animate, stagger } from "framer-motion";
 
+import { toKebabCase } from "../helpers/Functions.js";
+
 export function StateIcon({ isOpen }) {
   return (
     <div className="project__state-icon">
@@ -33,7 +35,7 @@ const initialValue = {
   filter: "blur(0px)",
 };
 
-function Project({ title, url, i, id, mouseX, mouseY, variants }) {
+function Project({ title, url, index, mouseX, mouseY, variants }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleClick() {
@@ -42,7 +44,7 @@ function Project({ title, url, i, id, mouseX, mouseY, variants }) {
     }
   }
 
-  const order = String(i + 1).padStart(3, "0");
+  const order = String(index + 1).padStart(3, "0");
 
   useEffect(() => {
     const staggerDelay = stagger(0.06);
@@ -79,7 +81,7 @@ function Project({ title, url, i, id, mouseX, mouseY, variants }) {
           }}
           href={url}
           className="feed__project"
-          id={id}
+          id={toKebabCase(title)}
           onClick={handleClick}
         >
           <ProjectContents title={title} order={order} isOpen={isOpen} />
@@ -98,7 +100,7 @@ function Project({ title, url, i, id, mouseX, mouseY, variants }) {
             backgroundPosition: `${mouseX}px ${mouseY}px`,
           }}
           className="feed__project"
-          id={id}
+          id={toKebabCase(title)}
           onClick={handleClick}
         >
           <ProjectContents title={title} order={order} isOpen={isOpen} />

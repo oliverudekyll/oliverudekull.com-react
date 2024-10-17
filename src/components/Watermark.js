@@ -3,9 +3,6 @@ import { interpolate } from "flubber";
 function Watermark({ mouseX, mouseY, docX, docY }) {
   const width = window.innerWidth;
   const height = window.innerHeight;
-  const x = (docX / width) * 10 + 1;
-  const y = (docY / height) * 1;
-  console.log(docX, docY);
 
   const svgInitial = [
     [541.403, 2.29428],
@@ -45,11 +42,10 @@ function Watermark({ mouseX, mouseY, docX, docY }) {
 
   return (
     <span
+      className="watermark"
       style={{
         backgroundPosition: `${mouseX}px ${mouseY}px`,
-        maskPosition: `${docX - width / 2}px ${docY - height / 1.6}px`,
       }}
-      className="watermark"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
         <defs>
