@@ -134,7 +134,6 @@ body {
  */
 
   box-shadow: 0px 0px 40px 0px rgba(230, 230, 230, 0.5) inset;
-  cursor: move;
 }
 
 a {
@@ -241,7 +240,7 @@ a {
   align-self: center;
   white-space: nowrap;
 
-  cursor: move;
+  cursor: pointer;
 }
 
 .project__order {

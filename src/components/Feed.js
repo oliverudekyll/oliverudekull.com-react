@@ -13,7 +13,7 @@ import {
 
 import "animate.css/animate.compat.css";
 
-import Project from "./Project.js";
+import ProjectButton from "./ProjectButton.js";
 import projectsData from "../data/projects.json";
 import { toKebabCase } from "../helpers/Functions.js";
 
@@ -30,13 +30,16 @@ function Feed({ mouseX, mouseY, initial, animate, transition }) {
         .reverse()
         .map((project, index) => {
           return (
-            <Project
+            <ProjectButton
               key={toKebabCase(project.title)}
               index={index}
               title={project.title}
               mouseX={mouseX}
               mouseY={mouseY}
-              {...(project.hasOwnProperty("url") ? { url: project.url } : {})}
+              initial={initial}
+              animate={animate}
+              transition={transition}
+              url={project.url}
             />
           );
         })}

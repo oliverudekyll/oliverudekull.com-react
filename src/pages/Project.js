@@ -1,18 +1,17 @@
 import { useParams } from "react-router-dom";
-import projectsData from "../data/projects.json";
+import { useLoaderData } from "react-router-dom";
 
 const Project = () => {
-  const { teamId } = useParams();
-  const findProject = (id) => {
-    return projectsData.find((project) => project.id === id);
-  };
-
-  const project = findProject(teamId);
+  const project = useLoaderData();
 
   return (
     <div className="project">
       <h2>{project.title}</h2>
-      <p>Project Description</p>
+      <div>
+        {project.images.map((image) => (
+          <img key={image} src={image} alt={project.title} />
+        ))}
+      </div>
     </div>
   );
 };

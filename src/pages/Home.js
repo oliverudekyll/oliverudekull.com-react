@@ -26,8 +26,6 @@ function Home() {
   const ratio = 100;
   const mouseX = 1 - (docX / window.innerWidth) * ratio;
   const mouseY = 1 - (docY / window.innerHeight) * ratio - 50;
-  const invertedMouseX = (docX / window.innerWidth) * ratio;
-  const invertedMouseY = (docY / window.innerHeight) * ratio - 50;
 
   const transition = {
     duration: 0.75,

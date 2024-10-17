@@ -3,80 +3,82 @@
     "title": "Elementary",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/elementary/elementary-1.webp"]
   },
   {
     "title": "Thru the&nbsp;Motions",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "Chants for&nbsp;Recognition",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "Erik Merisalu",
 
     "desc": "",
-    "images": [],
     "url": "http://www.erikmerisalu.com/"
   },
   {
     "title": "Inklingroom",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "Woman Sitting at the&nbsp;Machine (Thinking)",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "If This Be&nbsp;Not&nbsp;I",
 
     "desc": "",
-    "images": []
+    "images": [
+      "../images/projects/if-this-be-not-i/if-this-be-not-i-1.webp",
+      "../images/projects/if-this-be-not-i/if-this-be-not-i-2.webp",
+      "../images/projects/if-this-be-not-i/if-this-be-not-i-3.webp"
+    ]
   },
   {
     "title": "So Called Neutral",
 
     "desc": "",
-    "images": [],
     "url": "https://socalledneutral.oliverudekull.com/"
   },
   {
     "title": "Float",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "Markus Laanisto",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "Paavli Kultuurivabrik",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "Dharma Doom",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   },
   {
     "title": "The Last Dusk Always Reaches the&nbsp;First&nbsp;Dawn",
 
     "desc": "",
-    "images": []
+    "images": ["../images/projects/"]
   }
 ]
