@@ -82,8 +82,8 @@ body {
   );
   mask-image: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 1) 50%
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 1) 60%
   );
 
   -webkit-mask-size: cover;
