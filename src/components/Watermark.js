@@ -1,9 +1,16 @@
+import {
+  motion,
+  cubicBezier,
+  easeInOut,
+  backInOut,
+  circInOut,
+  anticipate,
+  linear,
+  steps,
+} from "framer-motion";
 import { interpolate } from "flubber";
 
-function Watermark({ mouseX, mouseY, docX, docY }) {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-
+function Watermark({ mouseX, mouseY, animate, initial, transition }) {
   const svgInitial = [
     [541.403, 2.29428],
     [540.705, 1.5959],
@@ -41,26 +48,33 @@ function Watermark({ mouseX, mouseY, docX, docY }) {
   ];
 
   return (
-    <span
-      className="watermark"
-      style={{
-        backgroundPosition: `${mouseX}px ${mouseY}px`,
-      }}
+    <motion.div
+      initial={initial}
+      animate={animate}
+      transition={transition}
+      className="watermark-container"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-        <defs>
-          <pattern
-            id="customPattern"
-            x="0"
-            y="0"
-            width="100"
-            height="100"
-            patternUnits="userSpaceOnUse"
-          ></pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#customPattern)" />
-      </svg>
-    </span>
+      <span
+        className="watermark"
+        style={{
+          backgroundPosition: `${mouseX}px ${mouseY}px`,
+        }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <defs>
+            <pattern
+              id="customPattern"
+              x="0"
+              y="0"
+              width="100"
+              height="100"
+              patternUnits="userSpaceOnUse"
+            ></pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#customPattern)" />
+        </svg>
+      </span>
+    </motion.div>
   );
 }
 

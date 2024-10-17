@@ -33,7 +33,7 @@ function Home() {
   };
 
   return (
-    <div ref={ref} className="home">
+    <div ref={ref}>
       <Feed
         mouseX={mouseX}
         mouseY={mouseY}
@@ -58,6 +58,9 @@ function Home() {
         docY={docY}
         mouseX={mouseX / 3}
         mouseY={mouseY / 3}
+        /*         initial={{ opacity: 0, y: 0, filter: "blur(5px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} */
+        transition={transition}
       />
     </div>
   );
