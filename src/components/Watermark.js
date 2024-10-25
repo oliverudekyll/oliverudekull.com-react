@@ -10,7 +10,15 @@ import {
 } from "framer-motion";
 import { interpolate } from "flubber";
 
-function Watermark({ mouseX, mouseY, animate, initial, transition }) {
+function Watermark({
+  mouseX,
+  mouseY,
+  animate,
+  initial,
+  transition,
+  docX,
+  docY,
+}) {
   const svgInitial = [
     [541.403, 2.29428],
     [540.705, 1.5959],
@@ -53,6 +61,11 @@ function Watermark({ mouseX, mouseY, animate, initial, transition }) {
       animate={animate}
       transition={transition}
       className="watermark-container"
+      style={{
+        maskPosition: `${docX - window.innerWidth / 2}px ${
+          docY - window.innerHeight / 2
+        }px`,
+      }}
     >
       <span
         className="watermark"
